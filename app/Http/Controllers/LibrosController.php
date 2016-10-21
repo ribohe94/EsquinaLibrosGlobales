@@ -22,9 +22,10 @@ class LibrosController extends Controller
     public function getActivos(){
         //Get libros from database instanciando DB de laravel
         $libros = DB::table('libros')->get();
+        $librosActive = DB::table('libros')->where('libActive','1')->get();
         $categorias = DB::table('categorias')->get();
         //pasa por url a la vista
-        return view('libro.activos',array('libros'=>$libros,'categorias'=>$categorias));
+        return view('libro.activos',array('libros'=>$libros,'categorias'=>$categorias, 'librosActive' => $librosActive));
     }
 
     public function getCompra($idLibro){

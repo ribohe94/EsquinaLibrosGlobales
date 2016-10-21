@@ -16,6 +16,34 @@
     <div class="portfolio-filter">
         <div class="clear"></div>
         <div class="portfolio-filter-wrapper">
+            <table>
+                @foreach($librosActive as $key=>$librosActive)
+                    <tr>
+                        <td>
+                            <a class="show-gallery-1" href="compra/{{$librosActive->idLibro}}"><img
+                                        src="img_books/dracula.png"
+                                        height="150" width="150"
+                                        alt="{{$librosActive->libNombre}}"></a>
+                            <a style="margin-left: 25px;" href="compra/{{$librosActive->idLibro}}"><img src="images/buttons/ir.png"
+                                                                             height="30" width="30"></a>
+                        </td>
+                        <td>
+                            <h1>
+                                {{$librosActive->libNombre}}
+                            </h1>
+                            <p>
+                                {{$librosActive->libDescripcion}}
+                            </p>
+                            <p>
+                                {{$librosActive->libAutor}}
+                            </p>
+                            <p>
+                                c {{$librosActive->libPrecioBase}}
+                            </p>
+                        </td>
+                    </tr>
+                @endforeach
+            </table>
 
         </div>
     </div>
