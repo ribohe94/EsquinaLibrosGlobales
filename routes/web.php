@@ -37,3 +37,10 @@ Route::group(['middleware' => 'auth'], function()
   Route::get('/signup', function () {
       return view('auth.register');
   });
+
+
+/**
+ * Rutas para páginas de los views en /libros
+ */
+
+Route::get('/activos','LibrosController@getActivos');
