@@ -28,7 +28,7 @@
 <link href="{{ url('styles/framework.css') }}"       rel="stylesheet" type="text/css">
 <link href="{{ url('styles/font-awesome.css') }}"    rel="stylesheet" type="text/css">
 <link href="{{ url('styles/animate.css') }}"         rel="stylesheet" type="text/css">
-<link href="css/compra.css""        rel="stylesheet" type="text/css">
+<link href="/css/compra.css"        rel="stylesheet" type="text/css">
 
 </head>
 

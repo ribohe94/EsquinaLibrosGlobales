@@ -20,7 +20,7 @@
 
                 <div class="portfolio-filter">
                 <div style="float:left">
-                  <img src="{{$libro->libImage}}" height="150" width="150" alt="{{$libro->libNombre}}" align="middle"></img>
+                  <img src="{{$libro->libImage}}" height="150" width="150" alt="{{$libro->libNombre}}" align="middle"/>
                 </div>
                   <div style="float:right;background:green;margin-left: 10px;" >
                     <h1>{{$libro->libNombre}}</h1>

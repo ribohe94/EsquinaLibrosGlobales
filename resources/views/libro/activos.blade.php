@@ -6,7 +6,7 @@
     <div class="header-clear-large"></div>
 
     <div class="container heading-style-5">
-        <h4 class="heading-title">Gallery Filterable</h4>
+        <h4 class="heading-title">Libros Activos</h4>
         <i class="fa fa-camera-retro heading-icon"></i>
         <div class="line bg-black"></div>
     </div>
@@ -20,12 +20,12 @@
                 @foreach($librosActive as $key=>$librosActive)
                     <tr>
                         <td>
-                            <a class="show-gallery-1" href="compra/{{$librosActive->idLibro}}"><img
-                                        src="img_books/dracula.png"
-                                        height="150" width="150"
-                                        alt="{{$librosActive->libNombre}}"></a>
-                            <a style="margin-left: 25px;" href="compra/{{$librosActive->idLibro}}"><img src="images/buttons/ir.png"
-                                                                             height="30" width="30"></a>
+                            <a class="show-gallery-1" href="bookView/{{$librosActive->idLibro}}">
+                                <img src="{{$librosActive->libImage}}" height="150" width="150"
+                                     alt="{{$librosActive->libNombre}}">
+                            </a>
+                            <a style="margin-left: 25px;" href="bookView/{{$librosActive->idLibro}}">
+                                <img src="images/buttons/ir.png" height="30" width="30"></a>
                         </td>
                         <td>
                             <h1>

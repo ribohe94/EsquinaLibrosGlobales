@@ -11,25 +11,34 @@ use App\Http\Requests;
 class LibrosController extends Controller
 {
 
-  public function getIndex(){
-    //Get libros from database instanciando DB de laravel
-      $libros = DB::table('libros')->get();
-      $categorias = DB::table('categorias')->get();
-      //pasa por url a la vista
-      return view('libro.index',array('libros'=>$libros,'categorias'=>$categorias));
-    }
-
-    public function getActivos(){
+    public function getIndex()
+    {
         //Get libros from database instanciando DB de laravel
         $libros = DB::table('libros')->get();
-        $librosActive = DB::table('libros')->where('libActive','1')->get();
         $categorias = DB::table('categorias')->get();
         //pasa por url a la vista
-        return view('libro.activos',array('libros'=>$libros,'categorias'=>$categorias, 'librosActive' => $librosActive));
+        return view('libro.index', array('libros' => $libros, 'categorias' => $categorias));
     }
 
-    public function getCompra($idLibro){
-      $libro = DB::table('libros')->where('idLibro',$idLibro)->first();
-      return view('libro.compra',['libro'=>$libro]);
+    public function getActivos()
+    {
+        //Get libros from database instanciando DB de laravel
+        $libros = DB::table('libros')->get();
+        $librosActive = DB::table('libros')->where('libActive', '1')->get();
+        $categorias = DB::table('categorias')->get();
+        //pasa por url a la vista
+        return view('libro.activos', array('libros' => $libros, 'categorias' => $categorias, 'librosActive' => $librosActive));
+    }
+
+    public function getActivo($idLibro)
+    {
+        $libro = DB::table('libros')->where('idLibro', $idLibro)->first();
+        return view('libro.bookView', ['libro' => $libro]);
+    }
+
+    public function getCompra($idLibro)
+    {
+        $libro = DB::table('libros')->where('idLibro', $idLibro)->first();
+        return view('libro.compra', ['libro' => $libro]);
     }
 }
