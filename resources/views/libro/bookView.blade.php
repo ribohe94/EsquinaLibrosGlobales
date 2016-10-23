@@ -1,6 +1,10 @@
 @extends('layouts.master')
 
 @section('content')
+    <head>
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+    </head>
+
     <!--Page content goes here, fixed elements go above the all elements class-->
     <!--Page content goes here, fixed elements go above the all elements class-->
     <div class="header-clear-large"></div>
@@ -20,22 +24,47 @@
                 <tr>
                     <td>
                         <img src="/{{$libro->libImage}}" height="150" width="150" alt="{{$libro->libNombre}}"/>
+                        <h1>
+                            {{$libro->libNombre}}
+                        </h1>
                     </td>
                     <td>
                         <h1>
                             {{$libro->libNombre}}
                         </h1>
                         <p>
-                            {{$libro->libDescripcion}}
+                            {{$libro->libAutor}}
                         </p>
                         <p>
-                            {{$libro->libAutor}}
+                            {{$libro->libDescripcion}}
                         </p>
                         <p>
                             c {{$libro->libPrecioBase}}
                         </p>
                     </td>
                 </tr>
+            </table>
+            <table>
+                @foreach($users as $key=>$users)
+                    <tr>
+                        <td>
+                            <p>{{$users->name}}</p>
+                            <p>{{$users->email}}</p>
+                        </td>
+                        <td>
+                            <i>
+                                {{$users->comentario}}
+                            </i>
+                        </td>
+                        <td>
+                            <p>c {{$users->oferta}}</p>
+                        </td>
+                        <td>
+                            <a href="#" class="btn green form_btn">Aceptar oferta</a>
+                            <a href="#" class="btn red form_btn">Rechazar oferta</a>
+                        </td>
+                    </tr>
+                @endforeach
             </table>
 
         </div>

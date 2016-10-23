@@ -3,7 +3,7 @@
 </div>
 
 <div id="preloader">
-	<div id="status">
+    <div id="status">
         <div class="preloader-logo"></div>
         <h3 class="center-text">Bienvenido</h3>
         <p class="center-text smaller-text">
@@ -24,9 +24,10 @@
             <a class="header-logo" href="/"><img src="/images/logo-light.png" alt="img"></a>
         </div>
         <div class="page-navigation">
-            <a href="index.html" class="active-navigation-item"><i class="fa fa-image"></i>     Classic Slider      <i class="fa fa-circle"></i></a>
-            <a href="index1.html"><i class="fa fa-camera"></i>    Fullscreen Slider   <i class="fa fa-circle"></i></a>
-            <a href="index2.html"><i class="fa fa-refresh"></i>   Rounded Slider      <i class="fa fa-circle"></i></a>
+            <a href="index.html" class="active-navigation-item"><i class="fa fa-image"></i> Classic Slider <i
+                        class="fa fa-circle"></i></a>
+            <a href="index1.html"><i class="fa fa-camera"></i> Fullscreen Slider <i class="fa fa-circle"></i></a>
+            <a href="index2.html"><i class="fa fa-refresh"></i> Rounded Slider <i class="fa fa-circle"></i></a>
         </div>
     </div>
 
@@ -94,3 +95,5 @@
             <div class="sidebar-deco"></div>
 
         </div>
+    </div>
+</div>

@@ -24,18 +24,21 @@
                                 <img src="{{$librosActive->libImage}}" height="150" width="150"
                                      alt="{{$librosActive->libNombre}}">
                             </a>
-                            <a style="margin-left: 25px;" href="bookView/{{$librosActive->idLibro}}">
-                                <img src="images/buttons/ir.png" height="30" width="30"></a>
+                            <a href="bookView/{{$librosActive->idLibro}}">
+                                <h1>
+                                    {{$librosActive->libNombre}}
+                                </h1>
+                            </a>
                         </td>
                         <td>
                             <h1>
                                 {{$librosActive->libNombre}}
                             </h1>
                             <p>
-                                {{$librosActive->libDescripcion}}
-                            </p>
-                            <p>
                                 {{$librosActive->libAutor}}
+                            </p>
+                            <p class="descripcion">
+                                {{$librosActive->libDescripcion}}
                             </p>
                             <p>
                                 c {{$librosActive->libPrecioBase}}
