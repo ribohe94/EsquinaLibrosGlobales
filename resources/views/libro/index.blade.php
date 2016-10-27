@@ -6,13 +6,13 @@
                 <div class="header-clear-large"></div>
 
                 <div class="container heading-style-5">
-                    <h4 class="heading-title">Gallery Filterable</h4>
-                    <i class="fa fa-camera-retro heading-icon"></i>
+                    <h4 class="heading-title">Esquina de Los Libros</h4>
+                    <i class="fa fa-book" aria-hidden="true"></i>
                     <div class="line bg-black"></div>
                     <p class="heading-subtitle">
-                        On the same principle as a filterable portfolio, but you can choose to filter the images you
-                        wish to see! Simple and easy! We recommend using 4 categories or less to keep them simple
-                        and perfect for user experience on mobiles.
+                      "Los libros son, entre mis consejeros, los que más me agradan,
+                      porque ni el temor ni la esperanza les impiden decirme lo que debo hacer."
+                      Rey de Aragon, Alfonso V el Magnánimo
                     </p>
                 </div>
 
@@ -31,7 +31,7 @@
                       @foreach($libros as $key=>$libros)
                       <div class="{{$libros->libCategoria}} all-cat portfolio-filter-item">
                           <a class="show-gallery-1" href="compra/{{$libros->idLibro}}"><img src="{{$libros->libImage}}" height="150" width="150" alt="{{$libros->libNombre}}"></a>
-                          <a href="compra/{{$libros->idLibro}}">Ir</a>
+                          <a href="compra/{{$libros->idLibro}}">Intercambio</a>
                       </div>
                       @endforeach
                     </div>

@@ -6,26 +6,33 @@
                 <div class="header-clear-large"></div>
 
                 <div class="container heading-style-5">
-                    <h4 class="heading-title">Gallery Filterable</h4>
-                    <i class="fa fa-camera-retro heading-icon"></i>
+                    <h4 class="heading-title">Esquina de Los Libros</h4>
+                    <i class="class="fa fa-book" aria-hidden="true""></i>
                     <div class="line bg-black"></div>
                     <p class="heading-subtitle">
-                        On the same principle as a filterable portfolio, but you can choose to filter the images you
-                        wish to see! Simple and easy! We recommend using 4 categories or less to keep them simple
-                        and perfect for user experience on mobiles.
+                      "Un libro abierto es un cerebro que habla; cerrado un amigo que espera;
+                      olvidado, un alma que perdona; destruido, un corazón que llora."
+                      proverbio hindú
                     </p>
                 </div>
 
                 <!--Static Columns-->
 
                 <div class="portfolio-filter">
-                <div style="float:left">
-                  <img src="{{$libro->libImage}}" height="150" width="150" alt="{{$libro->libNombre}}" align="middle"/>
-                </div>
-                  <div style="float:right;background:green;margin-left: 10px;" >
-                    <h1>{{$libro->libNombre}}</h1>
-                    <p1>Descripción: {{$libro->libDescripcion}}</p1>
-                  </div>
+                <table border="0">
+                    <td width="50%">
+                      <div style="float:center;padding:0" width="50%">
+                        <img src="{{$libro->libImage}}" height="100%" width="100%" alt="{{$libro->libNombre}}"></img>
+                      </div>
+                    </td>
+                    <td width="70%">
+
+                        <div style="float:center;" >
+                          <h1>{{$libro->libNombre}}</h1>
+                          <p1>Descripción: {{$libro->libDescripcion}}</p1>
+                        </div>
+                    </td>
+                </table>
                 </div>
 
 
