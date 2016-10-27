@@ -7,7 +7,7 @@
 
                 <div class="container heading-style-5">
                     <h4 class="heading-title">Esquina de Los Libros</h4>
-                    <i class="fa fa-camera-retro heading-icon"></i>
+                    <i class="fa fa-book" aria-hidden="true"></i>
                     <div class="line bg-black"></div>
                     <p class="heading-subtitle">
                       "Los libros son, entre mis consejeros, los que más me agradan,
