@@ -6,7 +6,7 @@
           <div class="pageapp-login bg-5 cover-screen">
               <div class="pageapp-login-content cover-center">
                   <div class="unboxed-layout">
-                    <form method="POST" action="/auth/begin">
+                    <form method="POST" action="/login">
                       {!! csrf_field() !!}
                       <a class="pageapp-login-logo" href="#"></a>
                       <div class="pageapp-login-field">
