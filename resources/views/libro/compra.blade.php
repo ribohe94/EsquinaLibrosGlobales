@@ -10,7 +10,7 @@
                     <i class="class="fa fa-book" aria-hidden="true""></i>
                     <div class="line bg-black"></div>
                     <p class="heading-subtitle">
-                      "Un libro abierto es un cerebro que habla; cerrado un amigo que espera;<br>
+                      "Un libro abierto es un cerebro que habla; cerrado un amigo que espera;
                       olvidado, un alma que perdona; destruido, un corazón que llora."
                       proverbio hindú
                     </p>
@@ -19,13 +19,20 @@
                 <!--Static Columns-->
 
                 <div class="portfolio-filter">
-                <div style="float:left">
-                  <img src="{{$libro->libImage}}" height="150" width="150" alt="{{$libro->libNombre}}" align="middle"></img>
-                </div>
-                  <div style="float:right;background:green;margin-left: 10px;" >
-                    <h1>{{$libro->libNombre}}</h1>
-                    <p1>Descripción: {{$libro->libDescripcion}}</p1>
-                  </div>
+                <table border="0">
+                    <td width="50%">
+                      <div style="float:center;padding:0" width="50%">
+                        <img src="{{$libro->libImage}}" height="100%" width="100%" alt="{{$libro->libNombre}}"></img>
+                      </div>
+                    </td>
+                    <td width="70%">
+
+                        <div style="float:center;" >
+                          <h1>{{$libro->libNombre}}</h1>
+                          <p1>Descripción: {{$libro->libDescripcion}}</p1>
+                        </div>
+                    </td>
+                </table>
                 </div>
 
 
