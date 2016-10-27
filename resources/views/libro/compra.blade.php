@@ -6,13 +6,13 @@
                 <div class="header-clear-large"></div>
 
                 <div class="container heading-style-5">
-                    <h4 class="heading-title">Gallery Filterable</h4>
-                    <i class="fa fa-camera-retro heading-icon"></i>
+                    <h4 class="heading-title">Esquina de Los Libros</h4>
+                    <i class="class="fa fa-book" aria-hidden="true""></i>
                     <div class="line bg-black"></div>
                     <p class="heading-subtitle">
-                        On the same principle as a filterable portfolio, but you can choose to filter the images you
-                        wish to see! Simple and easy! We recommend using 4 categories or less to keep them simple
-                        and perfect for user experience on mobiles.
+                      "Un libro abierto es un cerebro que habla; cerrado un amigo que espera;<br>
+                      olvidado, un alma que perdona; destruido, un corazón que llora."
+                      proverbio hindú
                     </p>
                 </div>
 

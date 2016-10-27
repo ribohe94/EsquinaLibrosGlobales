@@ -16,12 +16,12 @@
 
 <div class="all-elements" id="main">
 
-    <div id="header-fixed" class="homepage-header transparent-header">
+    <div id="header-fixed" class="homepage-header">
         <div class="header-elements">
-            <a class="open-left-sidebar" href="#"><i class="fa fa-navicon"></i></a>
+            <!--<a class="open-left-sidebar" href="#"><i class="fa fa-navicon"></i></a>-->
             <a class="open-contact" href="/auth/logout"><i class="fa fa-envelope-o"></i></a>
             <a class="open-submenu" href="#"><i class="fa fa-angle-down"></i></a>
-            <a class="header-logo" href="/"><img src="images/logo-light.png" alt="img"></a>
+            <!--<a class="header-logo" href="/"><img src="images/logo-light.png" alt="img"></a>-->
         </div>
         <div class="page-navigation">
             <a href="index.html" class="active-navigation-item"><i class="fa fa-image"></i>     Classic Slider      <i class="fa fa-circle"></i></a>
