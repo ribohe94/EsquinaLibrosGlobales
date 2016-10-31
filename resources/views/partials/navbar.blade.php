@@ -24,10 +24,11 @@
             <a class="header-logo" href="/"><img src="/images/logo-light.png" alt="img"></a>
         </div>
         <div class="page-navigation">
-            <a href="index.html" class="active-navigation-item"><i class="fa fa-image"></i> Classic Slider <i
+            <a href="activos" class="active-navigation-item"><i class="fa fa-image"></i> Libros Activos <i
                         class="fa fa-circle"></i></a>
             <a href="index1.html"><i class="fa fa-camera"></i> Fullscreen Slider <i class="fa fa-circle"></i></a>
             <a href="index2.html"><i class="fa fa-refresh"></i> Rounded Slider <i class="fa fa-circle"></i></a>
+            <a href="activos.blade.php">activos</a>
         </div>
     </div>
 

@@ -1,0 +1,15 @@
+.bookIcon {
+    max-height: 300px;
+    max-width: 300px;
+}
+
+.portfolio-filter {
+    max-width: 50%;
+    margin: auto;
+}
+
+.container {
+    max-width: 50%;
+    margin: auto;
+}
+

@@ -57,7 +57,8 @@
                             </i>
                         </td>
                         <td>
-                            <p>c {{$users->oferta}}</p>
+                            <p>₡ {{$users->oferta}}</p>
+                            <p>{{$users->ofertaLib}}</p>
                         </td>
                         <td>
                             <a href="#" class="btn green form_btn">Aceptar oferta</a>

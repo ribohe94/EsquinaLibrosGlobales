@@ -33,9 +33,9 @@ class LibrosController extends Controller
     public function getActivo($idLibro)
     {
         $libro = DB::table('libros')->where('idLibro', $idLibro)->first();
-        $subasta = DB::table('subasta')->where('libro',$idLibro)->get();
+        $subasta = DB::table('subasta')->where('libro', $idLibro)->get();
         //select * from users right join subasta on users.id = subasta.usuario;
-        $users = DB::table('users')->rightJoin('subasta', 'subasta.usuario', '=', 'users.id')->select('users.name', 'users.email', 'subasta.comentario', 'subasta.oferta')->get();
+        $users = DB::table('users')->rightJoin('oferta', 'oferta.usuario', '=', 'users.id')->select('users.name', 'users.email', 'oferta.comentario', 'oferta.oferta', 'oferta.ofertaLib')->get();
         return view('libro.bookView', ['libro' => $libro], array('subasta' => $subasta, 'users' => $users));
     }
 

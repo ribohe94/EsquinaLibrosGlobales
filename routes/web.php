@@ -30,4 +30,7 @@ Route::group(['middleware' => 'auth'], function()
       return view('auth.register');
   });
 
-Route::get('/activos', 'LibrosController@getActivos');
+Route::get('activos', 'LibrosController@getActivos');
+
+Route::get('search', array('as'=>'search', 'uses'=>'SearchController@search'));
+Route::get('autocomplete', array('as'=>'autocomplete', 'uses'=>'SearchController@autocomplete'));
