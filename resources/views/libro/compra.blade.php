@@ -7,11 +7,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
         <link rel="stylesheet" type="text/css" href="/css/form.css">
         <link rel="stylesheet" type="text/css" href="/css/compra.css">
-
     </head>
-    <!--Page content goes here, fixed elements go above the all elements class-->
-    <!--Page content goes here, fixed elements go above the all elements class-->
-    <div class="header-clear-large"></div>
+
+
 
     <div class="container heading-style-5">
         <h4 class="heading-title">Esquina de Los Libros</h4>
