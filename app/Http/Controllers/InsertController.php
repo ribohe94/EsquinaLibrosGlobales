@@ -8,7 +8,10 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Input;
 
+use Illuminate\Support\Facades\Redirect;
+
 use DB;
+use View;
 
 class InsertController extends Controller
 {
@@ -45,9 +48,14 @@ class InsertController extends Controller
         $user->oferta = Input::get("oferta");
         $user->usuario = Input::get("usuario");
         $user->comentario = Input::get("comentario");
+        $user->libro = Input::get("libro");
         $user->save();
-        
-        return redirect('home');
+
+        $idLibro = Input::get("libro");
+        $libro = DB::table('libros')->where('idLibro', $idLibro)->first();
+        $user = DB::table('users')->where('id','1')->first();
+
+        return View::make('libro/pago',  ['libro' => $libro], ['user' => $user], ['idLibro' => $idLibro]);
     }
 
     /**

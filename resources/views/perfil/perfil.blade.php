@@ -10,9 +10,13 @@
     <div class="header-clear-large"></div>
 
     <div class="container heading-style-5">
-        <h4 class="heading-title">{{$libro->libNombre}}</h4>
-        <i class="fa fa-camera-retro heading-icon"></i>
+        <h4 class="heading-title">Perfil del Usuario</h4>
+		<i class="class="fa fa-book" aria-hidden="true""></i>
         <div class="line bg-black"></div>
+		<p class="heading-subtitle">
+                      “No es hasta que estamos perdidos que comenzamos a comprendernos a nosotros mismos”
+                      Henry David Thoreau
+                    </p>
     </div>
 
     <!--Static Columns-->
@@ -23,51 +27,18 @@
             <table>
                 <tr>
                     <td>
-                        <img src="/{{$libro->libImage}}" height="150" width="150" alt="{{$libro->libNombre}}"/>
+                      <img src="{{$user->avatar_url}}" height="150" width="150" alt="{{$user->name}}"/>
                         <h1>
-                            {{$libro->libNombre}}
+                           Nickname:{{$user->name}}
                         </h1>
                     </td>
+					
                     <td>
-                        <h1>
-                            {{$libro->libNombre}}
-                        </h1>
-                        <p>
-                            {{$libro->libAutor}}
-                        </p>
-                        <p>
-                            {{$libro->libDescripcion}}
-                        </p>
-                        <p>
-                            c {{$libro->libPrecioBase}}
-                        </p>
+                        <h1>Nombre: {{$user->first_name}} {{$user->last_name}}</h1>
+                        <h1>Correo: {{$user->email}}</h1>
+						<h1>Ubicacion: {{$user->country}}</h1>
                     </td>
                 </tr>
-            </table>
-            <table>
-                @foreach($users as $key=>$users)
-                  @if($users->libro == $idLibro)
-                    <tr>
-                        <td>
-                            <p>{{$users->name}}</p>
-                            <p>{{$users->email}}</p>
-                        </td>
-                        <td>
-                            <i>
-                                {{$users->comentario}}
-                            </i>
-                        </td>
-                        <td>
-                            <p>₡ {{$users->oferta}}</p>
-                            <p>{{$users->ofertaLib}}</p>
-                        </td>
-                        <td>
-						<a href="/pago/{{$libro->idLibro}}" class="btn green form_btn">Aceptar oferta</a>
-                        <a href="#" class="btn red form_btn">Rechazar oferta</a>
-                        </td>
-                    </tr>
-                    @endif
-                @endforeach
             </table>
 
         </div>

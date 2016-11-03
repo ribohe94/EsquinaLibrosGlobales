@@ -78,6 +78,7 @@
                 </table>
                 <li>
                     <input type="hidden" id="usuario" name="usuario" value="{{$loggedusr}}">
+                    <input type="hidden" id="libro" name="libro" value="{{$libro->idLibro}}">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <input type="submit" name="submit" id="submit" value="Enviar Oferta">
                 </li>

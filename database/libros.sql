@@ -42,11 +42,27 @@ CREATE TABLE `libros` (
   `libCategoria` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Tabla para los libros de la aplicacion';
 
+--
+-- Indices de la tabla `libros`
+--
+ALTER TABLE `libros`
+  ADD PRIMARY KEY (`idLibro`) USING BTREE;
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `libros`
+--
+ALTER TABLE `libros`
+  MODIFY `idLibro` int(18) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
 CREATE TABLE Esquina.subasta
 (
     id INT NOT NULL,
     oferta FLOAT NOT NULL,
-    usuario INT(10) UNSIGNED NOT NULL,
+    usuario INT(11) UNSIGNED NOT NULL,
     comentario varchar(480) NOT NULL,
     libro int(18) NOT NULL,
     PRIMARY KEY (id),
@@ -59,27 +75,16 @@ CREATE TABLE Esquina.oferta
     id INT NOT NULL AUTO_INCREMENT,
     ofertaLib varchar(25),
     oferta FLOAT,
-    usuario INT(10) UNSIGNED NOT NULL,
-    comentario varchar(480) NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (usuario) REFERENCES users (id)
-);
-
-CREATE TABLE Esquina.intercambio
-(
-    id INT NOT NULL,
-    ofertaLib INT(18) NOT NULL,
-    usuario INT(10) UNSIGNED NOT NULL,
+    usuario varchar(255) UNSIGNED NOT NULL,
     comentario varchar(480) NOT NULL,
     libro int(18) NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (usuario) REFERENCES users (id),
     FOREIGN KEY (libro) REFERENCES libros (idLibro)
 );
-
-INSERT INTO oferta (id, ofertaLib, oferta, usuario, comentario) VALUES
-  (1, 'Un Diccionario', 1000, 1, 'El libro me parece muy interesante, Quiero leerlo!!!'),
-  (2, 'La Iliada', 2000, 2, 'El libro me parece muy interesante, Quiero leerlo!!!');
+INSERT INTO oferta (id, ofertaLib, oferta, usuario, comentario, libro) VALUES
+  (1, 'Un Diccionario', 1000, 1, 'El libro me parece muy interesante, Quiero leerlo!!!', 1),
+  (2, 'La Iliada', 2000, 2, 'El libro me parece muy interesante, Quiero leerlo!!!', 1);
 
 --
 -- Volcado de datos para la tabla `libros`
@@ -97,21 +102,7 @@ INSERT INTO `libros` (`libNombre`, `libIsnb`, `libDescripcion`, `libIntercambio`
 -- Índices para tablas volcadas
 --
 
---
--- Indices de la tabla `libros`
---
-ALTER TABLE `libros`
-  ADD PRIMARY KEY (`idLibro`) USING BTREE;
 
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `libros`
---
-ALTER TABLE `libros`
-  MODIFY `idLibro` int(18) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

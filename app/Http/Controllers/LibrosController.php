@@ -36,10 +36,17 @@ class LibrosController extends Controller
     {
         $libro = DB::table('libros')->where('idLibro', $idLibro)->first();
         //select * from users right join subasta on users.id = subasta.usuario;
-        $users = DB::table('users')->rightJoin('oferta', 'oferta.usuario', '=', 'users.id')->select('users.name', 'users.email', 'oferta.comentario', 'oferta.oferta', 'oferta.ofertaLib')->get();
+        $users = DB::table('users')->rightJoin('oferta', 'oferta.usuario', '=', 'users.id')->select('users.name', 'users.email', 'oferta.comentario', 'oferta.oferta', 'oferta.ofertaLib', 'oferta.libro')->get();
         $loggedusr = Auth::id();
-        return view('libro.bookView', ['libro' => $libro], array('users' => $users, 'loggedusr' => $loggedusr));
+        return view('libro.bookView', ['libro' => $libro, 'idLibro' => $idLibro], array('users' => $users, 'loggedusr' => $loggedusr));
     }
+
+	public function getPago($idLibro)
+    {
+        $libro = DB::table('libros')->where('idLibro', $idLibro)->first();
+        $user = DB::table('users')->where('id','1')->first();
+        return view('libro.pago', ['libro' => $libro], ['user' => $user]);
+	}
 
     public function getCompra($idLibro)
     {

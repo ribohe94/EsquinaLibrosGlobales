@@ -23,7 +23,15 @@ Route::group(['middleware' => 'auth'], function()
   Route::get('/home','LibrosController@getindex');
   Route::get('compra/{idLibro}','LibrosController@getCompra');
   Route::post('compra/store', 'InsertController@store');
-  Route::get('/bookView/{idLibro}', 'LibrosController@getActivo');
+  Route::get('bookView/{idLibro}', 'LibrosController@getActivo');
+
+  Route::get('/perfil/','PerfilController@index');
+
+  Route::get('pago', function () {
+      return view('auth.register');
+  });
+  //Route::post('form', array('as' => 'form', 'uses'=>'LibrosController@getPago'));
+
   Route::get('auth/logout', 'Auth\LoginController@logout');
   Route::post('auth/logout', 'Auth\LoginController@logout');
 });
@@ -35,4 +43,3 @@ Route::get('activos', 'LibrosController@getActivos');
 
 Route::get('search', array('as'=>'search', 'uses'=>'SearchController@search'));
 Route::get('autocomplete', array('as'=>'autocomplete', 'uses'=>'SearchController@autocomplete'));
-
