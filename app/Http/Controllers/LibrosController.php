@@ -7,6 +7,8 @@ use DB;
 use App\Categoria;
 use App\Libro;
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
+
 
 class LibrosController extends Controller
 {
@@ -33,15 +35,16 @@ class LibrosController extends Controller
     public function getActivo($idLibro)
     {
         $libro = DB::table('libros')->where('idLibro', $idLibro)->first();
-        $subasta = DB::table('subasta')->where('libro', $idLibro)->get();
         //select * from users right join subasta on users.id = subasta.usuario;
         $users = DB::table('users')->rightJoin('oferta', 'oferta.usuario', '=', 'users.id')->select('users.name', 'users.email', 'oferta.comentario', 'oferta.oferta', 'oferta.ofertaLib')->get();
-        return view('libro.bookView', ['libro' => $libro], array('subasta' => $subasta, 'users' => $users));
+        $loggedusr = Auth::id();
+        return view('libro.bookView', ['libro' => $libro], array('users' => $users, 'loggedusr' => $loggedusr));
     }
 
     public function getCompra($idLibro)
     {
         $libro = DB::table('libros')->where('idLibro', $idLibro)->first();
-        return view('libro.compra', ['libro' => $libro]);
+        $loggedusr = Auth::id();
+        return view('libro.compra', ['libro' => $libro], ['loggedusr' => $loggedusr]);
     }
 }

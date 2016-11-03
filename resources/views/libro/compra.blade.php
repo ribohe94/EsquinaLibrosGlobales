@@ -5,6 +5,7 @@
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
+        <script src="/js/form.js"></script>
         <link rel="stylesheet" type="text/css" href="/css/form.css">
         <link rel="stylesheet" type="text/css" href="/css/compra.css">
     </head>
@@ -42,41 +43,43 @@
     </div>
 
     <div class="offer" onload="adjust_textarea(h)">
-        <form class="form-style-7">
+        <form action="store" method="post" class="form-style-7">
             <ul>
                 <li>
                     <label class="fieldbox" for="bio">Comentario</label>
-                    <textarea name="bio" onkeyup="adjust_textarea(this)"></textarea>
+                    <textarea id="comentario"  name="comentario" onkeyup="adjust_textarea(this)"></textarea>
                     <span>Escribe un comentario para el vendedor</span>
                 </li>
                 <table>
                     <tr>
                         <td>
-                            <input id="pagoCompra" type="radio" name="payment" value="currency"> Pago</input>
+                            <label id="pagoCompra" type="radio" name="payment" value="currency"> Pago</label>
                         </td>
                         <td>
-                            <input id="interCompra" type="radio" name="payment" value="exchange">
-                            Intercambio</input>
+                            <label id="interCompra" type="radio" name="payment" value="exchange">
+                            Intercambio</label>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <li>
-                                <textarea placeholder="Cuanto ofreces?" name="bio"
-                                          onkeyup="adjust_textarea(this)"></textarea>
+                                <input id="oferta" name="oferta" type="text" placeholder="Cuanto ofreces?" name="bio"
+                                          onkeyup="adjust_textarea(this)">
                                 <span>Escribe cuanto ofreces</span>
                             </li>
                         </td>
                         <td>
                             <li>
-                                <input type="text" class="typehead form-control" onload="typeahead()">
+                                <input id="ofertaLib" name="ofertaLib" type="text" class="typehead form-control" onload="typeahead()">
                                 <span>Escribe el libro que vas a intercambiar</span>
                             </li>
                         </td>
                     </tr>
                 </table>
                 <li>
-                    <input type="submit" value="Enviar Oferta">
+                    <input type="hidden" id="usuario" name="usuario" value="{{$loggedusr}}">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="submit" name="submit" id="submit" value="Enviar Oferta">
                 </li>
             </ul>
         </form>
