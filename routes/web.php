@@ -22,7 +22,12 @@ Route::group(['middleware' => 'auth'], function()
 {
   Route::get('/home','LibrosController@getindex');
   Route::get('compra/{idLibro}','LibrosController@getCompra');
-  Route::get('/bookView/{idLibro}', 'LibrosController@getActivo');
+  Route::get('bookView/{idLibro}', 'LibrosController@getActivo');
+  
+  Route::get('/perfil/','PerfilController@index');
+  
+  Route::get('pago/{idLibro}', 'LibrosController@getPago');
+  
   Route::get('auth/logout', 'Auth\LoginController@logout');
   Route::post('auth/logout', 'Auth\LoginController@logout');
 });

@@ -38,6 +38,13 @@ class LibrosController extends Controller
         $users = DB::table('users')->rightJoin('subasta', 'subasta.usuario', '=', 'users.id')->select('users.name', 'users.email', 'subasta.comentario', 'subasta.oferta')->get();
         return view('libro.bookView', ['libro' => $libro], array('subasta' => $subasta, 'users' => $users));
     }
+	
+	public function getPago($idLibro)
+    {
+        $libro = DB::table('libros')->where('idLibro', $idLibro)->first();
+        $user = DB::table('users')->where('id','1')->first();
+        return view('libro.pago', ['libro' => $libro], ['user' => $user]);
+	}
 
     public function getCompra($idLibro)
     {

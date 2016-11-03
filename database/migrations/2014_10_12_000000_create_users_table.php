@@ -14,7 +14,7 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->primary('id');
+            $table->string('id')->primary();
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->boolean('status')->default(0);
             $table->string('account_type')->default('normal');
             $table->string('sns_acc_id');
+			$table->string('country');
             $table->rememberToken();
             $table->timestamps();
         });
