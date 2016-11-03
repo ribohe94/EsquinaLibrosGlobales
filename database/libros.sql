@@ -56,15 +56,13 @@ CREATE TABLE Esquina.subasta
 
 CREATE TABLE Esquina.oferta
 (
-    id INT NOT NULL,
-    ofertaLib INT(18),
+    id INT NOT NULL AUTO_INCREMENT,
+    ofertaLib varchar(25),
     oferta FLOAT,
     usuario INT(10) UNSIGNED NOT NULL,
     comentario varchar(480) NOT NULL,
-    libro int(18) NOT NULL,
     PRIMARY KEY (id),
-    FOREIGN KEY (usuario) REFERENCES users (id),
-    FOREIGN KEY (libro) REFERENCES libros (idLibro)
+    FOREIGN KEY (usuario) REFERENCES users (id)
 );
 
 CREATE TABLE Esquina.intercambio
@@ -79,13 +77,9 @@ CREATE TABLE Esquina.intercambio
     FOREIGN KEY (libro) REFERENCES libros (idLibro)
 );
 
-INSERT INTO subasta (id, oferta, usuario, comentario, libro) VALUES
-  (1, 3000, 1, 'El libro me parece muy interesante, Quiero leerlo!!!', 1),
-  (2, 4000, 2, 'El libro me parece muy interesante, Quiero leerlo!!!', 1);
-
-  INSERT INTO intercambio (id, oferta, usuario, comentario, libro) VALUES
-    (1, 1, 1, 'El libro me parece muy interesante, Quiero leerlo!!!', 2),
-    (2, 1, 2, 'El libro me parece muy interesante, Quiero leerlo!!!', 2);
+INSERT INTO oferta (id, ofertaLib, oferta, usuario, comentario) VALUES
+  (1, 'Un Diccionario', 1000, 1, 'El libro me parece muy interesante, Quiero leerlo!!!'),
+  (2, 'La Iliada', 2000, 2, 'El libro me parece muy interesante, Quiero leerlo!!!');
 
 --
 -- Volcado de datos para la tabla `libros`

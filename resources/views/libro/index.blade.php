@@ -30,7 +30,7 @@
                     <div class="portfolio-filter-wrapper">
                       @foreach($libros as $key=>$libros)
                       <div class="{{$libros->libCategoria}} all-cat portfolio-filter-item">
-                          <a class="show-gallery-1" href="compra/{{$libros->idLibro}}"><img src="{{$libros->libImage}}" height="150" width="150" alt="{{$libros->libNombre}}"></a>
+                          <a class="show-gallery-1" href="compra/{{$libros->idLibro}}"><img src="/{{$libros->libImage}}" height="150" width="150" alt="{{$libros->libNombre}}"></a>
                           <a href="compra/{{$libros->idLibro}}">Intercambio</a>
                       </div>
                       @endforeach

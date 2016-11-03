@@ -19,7 +19,7 @@ class InsertController extends Controller
      */
     public function index()
     {
-        return "data saved";
+      //
     }
 
     /**
@@ -46,8 +46,8 @@ class InsertController extends Controller
         $user->usuario = Input::get("usuario");
         $user->comentario = Input::get("comentario");
         $user->save();
-
-        return("Data form saved");
+        
+        return redirect('home');
     }
 
     /**
